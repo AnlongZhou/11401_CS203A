@@ -18,10 +18,12 @@
     - Wednesday 14:00–16:00 (R1310)
 
 ## Student's Information
-- **Name:** [Yu-Teng Chou](https://github.com/AnlongZhou)
+- **Name:** Yu-Teng Chou
 - **Student ID:** 1133518
+- [**Contact**](mailto:s1133518@mail.yzu.edu.tw)
+- [**GitHub**](https://github.com/AnlongZhou)
 
 ## Repository Description
-Living document to record what I've learned from this course
+**Living document** to record what I've learned from this course
 
  
