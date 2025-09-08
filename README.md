@@ -29,6 +29,7 @@
 ## Student's Information <a name="student-info" />
 - **Name:** Yu-Teng Chou
 - **Student ID:** 1133518
+- **Department and Class:** 資訊工程學系2B
 - [**Contact**](mailto:s1133518@mail.yzu.edu.tw)
 - [**GitHub**](https://github.com/AnlongZhou)
 
