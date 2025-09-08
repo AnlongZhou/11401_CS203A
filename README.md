@@ -24,6 +24,6 @@
 - [**GitHub**](https://github.com/AnlongZhou)
 
 ## Repository Description
->> This repository is made to record what I've learned in the **Data Structures** course in order to review, 
+- This repository is made to record what I've learned in the **Data Structures** course in order to review, 
 and practice the skills of using **Version Control Tool**  and **Markdown**.
  
