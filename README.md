@@ -24,6 +24,6 @@
 - [**GitHub**](https://github.com/AnlongZhou)
 
 ## Repository Description
-**Living document** to record what I've learned from this course
-
+This repository is made to record what I've learned in the Data Structures course in order to review.
+And practice the skills of using **Version Control Tool**  and **Markdown** .
  
