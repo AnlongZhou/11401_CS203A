@@ -1,5 +1,14 @@
 # 11401_CS203A Data Structures
 
+## Table of Contents
+
+1. ### Course Information
+
+2. ### Student's Information
+
+3. ### Repository Description
+
+
 ## Course Information
 - **Course Title:** Data Structures
 - **Course Code:** CS203A
