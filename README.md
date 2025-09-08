@@ -1,6 +1,6 @@
 # 11401_CS203A Data Structures
 
-> ## Course Information
+## Course Information
 - **Course Title:** Data Structures
 - **Course Code:** CS203A
 - **Target Audience**: Undergraduate Students
@@ -17,11 +17,11 @@
     - Monday 14:00-16:00 (R1310)
     - Wednesday 14:00–16:00 (R1310)
 
-> ## Student's Information
+## Student's Information
 - **Name:** 周育騰
 - **Student ID:** 1133518
 
-> ## Repository Description
+## Repository Description
 Living document to record what I've learned from this course
 
  
