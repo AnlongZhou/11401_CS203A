@@ -2,14 +2,14 @@
 
 ## Table of Contents
 
-1. ### Course Information
+1. [Course Information](#course-info)
 
-2. ### Student's Information
+2. [Student's Information](#student-info)
 
-3. ### Repository Description
+3. [Repository Description](#repo-description)
 
 
-## Course Information
+## Course Information <a name="course-info" />
 - **Course Title:** Data Structures
 - **Course Code:** CS203A
 - **Duration**: 18 Weeks
@@ -26,13 +26,13 @@
     - Monday 14:00-16:00 (R1310)
     - Wednesday 14:00–16:00 (R1310)
 
-## Student's Information
+## Student's Information <a name="student-info" />
 - **Name:** Yu-Teng Chou
 - **Student ID:** 1133518
 - [**Contact**](mailto:s1133518@mail.yzu.edu.tw)
 - [**GitHub**](https://github.com/AnlongZhou)
 
-## Repository Description
+## Repository Description <a name="repo-description" />
 - This repository is made to record what I've learned in the **Data Structures** course in order to review, 
 and practice the skills of using **Version Control Tool**  and **Markdown**.
  
