@@ -18,7 +18,6 @@
 - **Instructor:**
     - **Name:** Yu-Feng Huang
     - [**Contact**](mailto:yfhuang@saturn.yzu.edu.tw)
-    - [**GitHub**](https://github.com/yfhuang)
 - **Course Time(Classroom):**
     - Monday 09:10–10:00 (R60104)
     - Tuesday 15:10–17:00 (R1102)
@@ -27,9 +26,10 @@
     - Wednesday 14:00–16:00 (R1310)
 
 ## Student's Information <a name="student-info" />
-- **Name:** Yu-Teng Chou
+- **Name:** [Yu-Teng Chou](https://anlongzhou.github.io/)
 - **Student ID:** 1133518
 - **Department and Class:** 資訊工程學系2B
+- [**Personal Site**](https://anlongzhou.github.io/)
 - [**Contact**](mailto:s1133518@mail.yzu.edu.tw)
 - [**GitHub**](https://github.com/AnlongZhou)
 
