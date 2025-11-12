@@ -9,9 +9,9 @@
    defined in "hash_fn.c".
 
    Development History:
-    - 2025/11/12: Initial implementation
+    - 2025/11/11: Initial implementation
 
-   Developer: Yu-Teng Zhou
+   Developer: Yu-Feng Huang <yfhuang@saturn.yzu.edu.tw>
  */
 
 #include <stdio.h>
