@@ -5,8 +5,7 @@
    Development History:
     - 2025/11/12: Initial implementation
     TODO: Enhance Integer Hash Function.
-    TODO: Enchance String Hash Function.
-    TODO: More error handling.
+    TODO: Collision Handling.
 
    Developer: Yu-Teng Zhou
  */
@@ -52,14 +51,12 @@ int myHashString(const std::string &str, int m) {
         return 0;
     }
 
-    unsigned long hash = 0;
-    char first_char, last_char;
+    // Implementing DJB2 hash function by Daniel J. Bernstein
+    unsigned long hash = 5381;
 
-    first_char = str[0];
-   last_char = str.back();
-
-    hash += (int)first_char;
-    hash += (int)last_char;
+    for (unsigned char c : str) {
+        hash = ((hash << 5) + hash) + c; // hash * 33 + c
+    }
 
     return (int)(hash % m);
 }
