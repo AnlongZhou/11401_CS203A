@@ -4,6 +4,8 @@
 
    Development History:
     - 2025/11/12: Initial implementation
+    - 2025/11/13: Enhanced string hash function and exception handling.
+
     TODO: Enhance Integer Hash Function.
     TODO: Collision handling.
 
