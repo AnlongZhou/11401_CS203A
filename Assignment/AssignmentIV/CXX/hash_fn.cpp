@@ -43,15 +43,20 @@ int myHashInt(int key, int m) {
  */
 int myHashString(const std::string &str, int m) {
 
-    unsigned long hash = 0;
-    char first_char, last_char;
+    if (m <= 0) {
+        std::cerr << "Error: Table size must be greater than 0." << std::endl;
+        return -1;
+    }
 
     if (str.empty()) {
         return 0;
     }
 
+    unsigned long hash = 0;
+    char first_char, last_char;
+
     first_char = str[0];
-    last_char = str.back();
+   last_char = str.back();
 
     hash += (int)first_char;
     hash += (int)last_char;

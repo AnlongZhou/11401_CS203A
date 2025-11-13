@@ -44,12 +44,18 @@ int my_hash_int(int key, int m) {
  */
 int my_hash_string(const char *str, int m) {
 
-    unsigned long hash = 0;
-    char first_char, last_char;
+    if (m <= 0) {
+        fprintf(stderr, "Error: Table size must be greater than 0.\n");
+        return -1;
+    }
 
     if (str == NULL) {
         return 0;
     }
+
+    unsigned long hash = 0;
+    char first_char, last_char;
+
 
     int length = strlen(str);
     first_char = str[0];
