@@ -18,20 +18,20 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 
     return (int)(hash % m);
     ```
-- Rationale: By implementing Knuth’s multiplicative hashing, we use a constant derived from the Golden Ratio (ϕ). Because ϕ is the 'most irrational number,' this constant creates a hash distribution that is most resistant to clustering, ensuring data is spread evenly across the table.
+- Rationale: Implementing *Knuth’s multiplicative hashing* . It use a constant derived from the Golden Ratio (ϕ). Because ϕ is the *most irrational number* , this constant creates a hash distribution that is most resistant to clustering, ensuring data is spread evenly across the table.
 
 ### Non-integer Keys
 - Formula / pseudocode:
   ```text
   unsigned long hash = 5381;
 
-    for (int i = 0; i < strlen(str); i++) {
-        hash = ((hash << 5) + hash) + (unsigned char)str[i];
+    while ((c = *str++)) {
+        hash = ((hash << 5) + hash) + c;
     }
 
     return (int)(hash % m);
   ```
-- Rationale: 
+- Rationale: Implementing *DJB2* (created by Daniel Julius Bernstein). It uses the prime number 5381, which has a *noisy* binary pattern, to initialize hash. By multiplying by 33 (implemented efficiently as(hash << 5) + hash), it spread the influence of every character to the final hash value.
 
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
@@ -53,105 +53,277 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 ### Compilation
 - Command for C:
   ```bash
-  gcc -o hash_function main.c
+  gcc -std=c23 -o hash_function.o main.c
   ```
 - Command for C++:
   ```bash
-  g++ -std=c++14 -o hash_function_cpp main.cpp
+  g++ -std=c++14 -o hash_function_cpp.o main.cpp
   ```
 
 ### Make Binary
 - Use the following `Makefile` to automate the build process:
   ```makefile
   all:
-      gcc -o hash_function main.c
-      g++ -std=c++14 -o hash_function_cpp main.cpp
+      gcc -std=c23 -o hash_function.o main.c
+      g++ -std=c++23 -o hash_function_cpp.o main.cpp
   clean:
-      rm -f hash_function hash_function_cpp
+      rm -f hash_function.o hash_function_cpp.o
   ```
 
 ### Execution
 - Run the compiled binary:
   ```bash
-  ./hash_function
+  ./hash_function.o
   ```
   or
   ```bash
-  ./hash_function_cpp
+  ./hash_function_cpp.o
   ```
 
 ### Result Snapshot
-- Example output for integers:
+- Example output:
   ```
-  === Hash Function Observation (C Version) ===
+  
+    === Hash Function Observation (C Version) ===
 
-  === Table Size m = 10 ===
-  Key     Index
-  -----------------
-  21      1
-  22      2
-  ...
+    === Table Size m = 10 ===
+    Key     Index
+    -----------------
+    21      1
+    22      2
+    23      3
+    24      4
+    25      5
+    26      6
+    27      7
+    28      8
+    29      9
+    30      0
+    51      1
+    52      2
+    53      3
+    54      4
+    55      5
+    56      6
+    57      7
+    58      8
+    59      9
+    60      0
 
-  === Table Size m = 11 ===
-  Key     Index
-  -----------------
-  21      10
-  22      0
-  ...
+    === Table Size m = 11 ===
+    Key     Index
+    -----------------
+    21      1
+    22      0
+    23      10
+    24      9
+    25      8
+    26      7
+    27      6
+    28      5
+    29      4
+    30      3
+    51      4
+    52      3
+    53      2
+    54      1
+    55      0
+    56      10
+    57      9
+    58      8
+    59      7
+    60      6
 
-  === Table Size m = 37 ===
-  Key     Index
-  -----------------
-  21      21
-  22      22
-  ...
+    === Table Size m = 37 ===
+    Key     Index
+    -----------------
+    21      5
+    22      7
+    23      9
+    24      11
+    25      13
+    26      15
+    27      17
+    28      19
+    29      21
+    30      23
+    51      28
+    52      30
+    53      32
+    54      34
+    55      36
+    56      1
+    57      3
+    58      5
+    59      7
+    60      9
 
-  === Hash Function Observation (C++ Version) ===
+    === Hash Function Observation (C++ Version) ===
 
-  === Table Size m = 10 ===
-  Key     Index
-  -----------------
-  21      1
-  22      2
-  ...
+    === Table Size m = 10 ===
+    Key     Index
+    -----------------
+    21      1
+    22      2
+    23      3
+    24      4
+    25      5
+    26      6
+    27      7
+    28      8
+    29      9
+    30      0
+    51      1
+    52      2
+    53      3
+    54      4
+    55      5
+    56      6
+    57      7
+    58      8
+    59      9
+    60      0
 
-  === Table Size m = 11 ===
-  Key     Index
-  -----------------
-  21      10
-  22      0
-  ...
+    === Table Size m = 11 ===
+    Key     Index
+    -----------------
+    21      1
+    22      0
+    23      10
+    24      9
+    25      8
+    26      7
+    27      6
+    28      5
+    29      4
+    30      3
+    51      4
+    52      3
+    53      2
+    54      1
+    55      0
+    56      10
+    57      9
+    58      8
+    59      7
+    60      6
 
-  === Table Size m = 37 ===
-  Key     Index
-  -----------------
-  21      21
-  22      22
-  ...
-  ```
+    === Table Size m = 37 ===
+    Key     Index
+    -----------------
+    21      5
+    22      7
+    23      9
+    24      11
+    25      13
+    26      15
+    27      17
+    28      19
+    29      21
+    30      23
+    51      28
+    52      30
+    53      32
+    54      34
+    55      36
+    56      1
+    57      3
+    58      5
+    59      7
+    60      9
+
+    ```
 
 - Example output for strings:
   ```
-  === String Hash (m = 10) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+    === Hash Function Observation (C Version) ===
 
-  === String Hash (m = 11) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+    === String Hash (m = 10) ===
+    Key     Index
+    -----------------
+    cat     5
+    dog     3
+    bat     6
+    cow     0
+    ant     6
+    owl     1
+    bee     3
+    hen     6
+    pig     3
+    fox     8
 
-  === String Hash (m = 37) ===
-  Key     Index
-  -----------------
-  cat     0
-  dog     0
-  ...
+    === String Hash (m = 11) ===
+    Key     Index
+    -----------------
+    cat     6
+    dog     4
+    bat     6
+    cow     9
+    ant     6
+    owl     9
+    bee     2
+    hen     0
+    pig     4
+    fox     10
+
+    === String Hash (m = 37) ===
+    Key     Index
+    -----------------
+    cat     29
+    dog     13
+    bat     13
+    cow     13
+    ant     19
+    owl     14
+    bee     19
+    hen     13
+    pig     7
+    fox     25
+
+    === Hash Function Observation (C++ Version) ===
+
+    === String Hash (m = 10) ===
+    Key     Index
+    -----------------
+    cat     5
+    dog     3
+    bat     6
+    cow     0
+    ant     6
+    owl     1
+    bee     3
+    hen     6
+    pig     3
+    fox     8
+
+    === String Hash (m = 11) ===
+    Key     Index
+    -----------------
+    cat     6
+    dog     4
+    bat     6
+    cow     9
+    ant     6
+    owl     9
+    bee     2
+    hen     0
+    pig     4
+    fox     10
+
+    === String Hash (m = 37) ===
+    Key     Index
+    -----------------
+    cat     29
+    dog     13
+    bat     13
+    cow     13
+    ant     19
+    owl     14
+    bee     19
+    hen     13
+    pig     7
+    fox     25
+
   ```
 
 - Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
