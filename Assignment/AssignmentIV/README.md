@@ -11,16 +11,27 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 ### Integer Keys 
 - Formula / pseudocode:
   ```text
-  [Your implementation here]
-  ```
-- Rationale: [Explain your design choices and how they minimize collisions.]
+    unsigned long hash = key;
+    const long hash_constant = 2654435761;
+
+    hash *= hash_constant;
+
+    return (int)(hash % m);
+    ```
+- Rationale: By implementing Knuth’s multiplicative hashing, we use a constant derived from the Golden Ratio (ϕ). Because ϕ is the 'most irrational number,' this constant creates a hash distribution that is most resistant to clustering, ensuring data is spread evenly across the table.
 
 ### Non-integer Keys
 - Formula / pseudocode:
   ```text
-  [Your implementation here]
+  unsigned long hash = 5381;
+
+    for (int i = 0; i < strlen(str); i++) {
+        hash = ((hash << 5) + hash) + (unsigned char)str[i];
+    }
+
+    return (int)(hash % m);
   ```
-- Rationale: [Explain your approach and its effectiveness for non-integer keys.]
+- Rationale: 
 
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
@@ -42,19 +53,19 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 ### Compilation
 - Command for C:
   ```bash
-  gcc -std=c23 -o hash_function main.c
+  gcc -o hash_function main.c
   ```
 - Command for C++:
   ```bash
-  g++ -std=c++23 -o hash_function_cpp main.cpp
+  g++ -std=c++14 -o hash_function_cpp main.cpp
   ```
 
 ### Make Binary
 - Use the following `Makefile` to automate the build process:
   ```makefile
   all:
-      gcc -std=c23 -o hash_function main.c
-      g++ -std=c++23 -o hash_function_cpp main.cpp
+      gcc -o hash_function main.c
+      g++ -std=c++14 -o hash_function_cpp main.cpp
   clean:
       rm -f hash_function hash_function_cpp
   ```

@@ -6,7 +6,6 @@
     - 2025/11/12: Initial implementation
     - 2025/11/13: Enhanced string hash function and exception handling.
 
-    TODO: Enhance Integer Hash Function.
     TODO: Collision Handling.
 
    Developer: Yu-Teng Zhou
@@ -28,8 +27,8 @@ int myHashInt(int key, int m) {
     }
 
     unsigned long hash = key;
-    const long hash_constant =
-        2654435761; // From Knuth’s multiplicative hashing (golden ratio).
+    const long hash_constant = 2654435761;
+    // From Knuth’s multiplicative hashing (golden ratio).
 
     hash *= hash_constant;
 
@@ -57,7 +56,8 @@ int myHashString(const std::string &str, int m) {
     unsigned long hash = 5381;
 
     for (unsigned char c : str) {
-        hash = ((hash << 5) + hash) + c; // hash * 33 + c
+        hash = ((hash << 5) + hash) + c;
+        // hash * 33 + c (using bitwise operation for efficiency)
     }
 
     return (int)(hash % m);

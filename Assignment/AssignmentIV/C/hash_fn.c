@@ -5,8 +5,8 @@
    Development History:
     - 2025/11/12: Initial implementation
     - 2025/11/13: Enhanced string hash function and exception handling.
+    - 2025/11/21: fixing performance issues in string hash function.
 
-    TODO: Enhance Integer Hash Function.
     TODO: Collision handling.
 
    Developer: Yu-Teng Zhou
@@ -28,8 +28,8 @@ int my_hash_int(int key, int m) {
     }
 
     unsigned long hash = key;
-    const long hash_constant =
-        2654435761; // From Knuth’s multiplicative hashing (golden ratio).
+    const long hash_constant = 2654435761;
+    // From Knuth’s multiplicative hashing (golden ratio).
 
     hash *= hash_constant;
 
@@ -53,11 +53,13 @@ int my_hash_string(const char *str, int m) {
         return 0;
     }
 
-    //Implementing DJB2 hash function by Daniel J. Bernstein
+    // Implementing DJB2 hash function by Daniel J. Bernstein
     unsigned long hash = 5381;
+    unsigned char c;
 
-    for (int i = 0; i < strlen(str); i++) {
-        hash = ((hash << 5) + hash) + (unsigned char)str[i]; // hash * 33 + c
+    while ((c = *str++)) {
+        hash = ((hash << 5) + hash) + c;
+        // hash * 33 + c (using bitwise operations for efficiency)
     }
 
     return (int)(hash % m);
