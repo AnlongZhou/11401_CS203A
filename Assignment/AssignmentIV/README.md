@@ -82,103 +82,13 @@ evaluate their efficiency, and understand their applications in computer science
   ```
 
 ### Result Snapshot
-- Example output for integer:
+- Example output:
 
-  <img width="676" height="1282" alt="Image" src="https://github.com/user-attachments/assets/8c654b1c-2d85-48bd-add4-c31d8a81e15c" />
+  <img width="677" height="1282" alt="Image" src="https://github.com/user-attachments/assets/8c654b1c-2d85-48bd-add4-c31d8a81e15c" />
+  <img width="589" height="718" alt="Image" src="https://github.com/user-attachments/assets/a4f9685c-06e9-477c-97b2-433310f54e91" />
+  <img width="686" height="1251" alt="Image" src="https://github.com/user-attachments/assets/8a0c690b-80c0-41a3-b1c3-fec5a355c8a3" />
+  <img width="589" height="718" alt="Image" src="https://github.com/user-attachments/assets/a4f9685c-06e9-477c-97b2-433310f54e91" />
 
-- Example output for strings:
-  ```
-    === Hash Function Observation (C Version) ===
-
-    === String Hash (m = 10) ===
-    Key     Index
-    -----------------
-    cat     5
-    dog     3
-    bat     6
-    cow     0
-    ant     6
-    owl     1
-    bee     3
-    hen     6
-    pig     3
-    fox     8
-
-    === String Hash (m = 11) ===
-    Key     Index
-    -----------------
-    cat     6
-    dog     4
-    bat     6
-    cow     9
-    ant     6
-    owl     9
-    bee     2
-    hen     0
-    pig     4
-    fox     10
-
-    === String Hash (m = 37) ===
-    Key     Index
-    -----------------
-    cat     29
-    dog     13
-    bat     13
-    cow     13
-    ant     19
-    owl     14
-    bee     19
-    hen     13
-    pig     7
-    fox     25
-
-    === Hash Function Observation (C++ Version) ===
-
-    === String Hash (m = 10) ===
-    Key     Index
-    -----------------
-    cat     5
-    dog     3
-    bat     6
-    cow     0
-    ant     6
-    owl     1
-    bee     3
-    hen     6
-    pig     3
-    fox     8
-
-    === String Hash (m = 11) ===
-    Key     Index
-    -----------------
-    cat     6
-    dog     4
-    bat     6
-    cow     9
-    ant     6
-    owl     9
-    bee     2
-    hen     0
-    pig     4
-    fox     10
-
-    === String Hash (m = 37) ===
-    Key     Index
-    -----------------
-    cat     29
-    dog     13
-    bat     13
-    cow     13
-    ant     19
-    owl     14
-    bee     19
-    hen     13
-    pig     7
-    fox     25
-
-  ```
-
-- Observations: Outputs align with the analysis, showing better distribution with prime table sizes.
 - Example output for integers:
   ```
   Hash table (m=10): [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
