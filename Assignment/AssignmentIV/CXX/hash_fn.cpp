@@ -6,7 +6,6 @@
     - 2025/11/12: Initial implementation
     - 2025/11/13: Enhanced string hash function and exception handling.
 
-    TODO: Collision Handling.
 
    Developer: Yu-Teng Zhou
  */

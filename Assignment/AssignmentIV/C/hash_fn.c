@@ -7,7 +7,6 @@
     - 2025/11/13: Enhanced string hash function and exception handling.
     - 2025/11/21: fixing performance issues in string hash function.
 
-    TODO: Collision handling.
 
    Developer: Yu-Teng Zhou
  */
