@@ -345,11 +345,11 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 - Observations: The testing data revealed a critical failure case at Table Size `m = 11`, where the hash index was determined solely by the last letter of the input string (e.g., "cat" and "bat" collided).
 
 ## Analysis
-- Mathematical Resonance: The catastrophic failure at `m = 11` proved that if the table size divides the hash multiplier `33`, the modular arithmetic cancels out string history, resulting in collisions based solely on the last character.
-- Structural Distribution: The comparison between `m = 10` and `m = 37` demonstrated that prime table sizes are essential to introduce **stride** (gaps) between sequential inputs, effectively breaking the linear clustering chains caused by composite numbers.
-- Input Sensitivity: The unexpected collisions with short strings (e.g., at `m = 37`) revealed that the DJB2 algorithm requires a minimum input length to generate a sufficient **avalanche effect**, otherwise the output remains too correlated to the raw ASCII values.
+- **Mathematical Resonance**: The catastrophic failure at `m = 11` proved that if the table size divides the hash multiplier `33`, the modular arithmetic cancels out string history, resulting in collisions based solely on the last character.
+- **Structural Distribution**: The comparison between `m = 10` and `m = 37` demonstrated that prime table sizes are essential to introduce **stride** (gaps) between sequential inputs, effectively breaking the linear clustering chains caused by composite numbers.
+- **Input Sensitivity**: The unexpected collisions with short strings (e.g., at `m = 37`) revealed that the DJB2 algorithm requires a minimum input length to generate a sufficient **avalanche effect**, otherwise the output remains too correlated to the raw ASCII values.
 
 ## Reflection
-1. The experiment demonstrated that lightweight algorithms like DJB2 trade some collision resistance for speed, requiring the engineer to manually ensure that the constants do not resonate with the table dimensions.
-2. The hash multiplier and table size must be **coprime** to ensure that the modular arithmetic preserves the history of the input string.
-3. Comparing the linear clustering at m=10 versus the gaps at m=37 highlighted that prime table sizes are mechanically necessary to introduce non-sequential strides that break up collision chains.
+1. The experiment demonstrated that lightweight algorithms like DJB2 **_trade some collision resistance for speed_**, requiring the engineer to manually ensure that the constants do not resonate with the table dimensions.
+2. The hash multiplier and table size must be **_coprime_** to ensure that the modular arithmetic preserves the history of the input string.
+3. Comparing the linear clustering at m=10 versus the gaps at m=37 highlighted that **_prime table_** sizes are mechanically necessary to introduce non-sequential strides that break up collision chains.
