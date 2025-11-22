@@ -4,8 +4,9 @@ This assignment focuses on the design and observation of hash functions using C/
 Students are expected to implement and analyze the behavior of hash functions, 
 evaluate their efficiency, and understand their applications in computer science.
 
-Developer: [周育騰](https://github.com/AnlongZhou)
-Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
+- Developer: [周育騰](https://github.com/AnlongZhou)
+- Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
+- Environment: Linux (Ubuntu 24.04)
 
 ## My Hash Function
 ### Integer Keys 
@@ -81,158 +82,9 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
   ```
 
 ### Result Snapshot
-- Example output:
-  ```
-  
-    === Hash Function Observation (C Version) ===
+- Example output for integer:
 
-    === Table Size m = 10 ===
-    Key     Index
-    -----------------
-    21      1
-    22      2
-    23      3
-    24      4
-    25      5
-    26      6
-    27      7
-    28      8
-    29      9
-    30      0
-    51      1
-    52      2
-    53      3
-    54      4
-    55      5
-    56      6
-    57      7
-    58      8
-    59      9
-    60      0
-
-    === Table Size m = 11 ===
-    Key     Index
-    -----------------
-    21      1
-    22      0
-    23      10
-    24      9
-    25      8
-    26      7
-    27      6
-    28      5
-    29      4
-    30      3
-    51      4
-    52      3
-    53      2
-    54      1
-    55      0
-    56      10
-    57      9
-    58      8
-    59      7
-    60      6
-
-    === Table Size m = 37 ===
-    Key     Index
-    -----------------
-    21      5
-    22      7
-    23      9
-    24      11
-    25      13
-    26      15
-    27      17
-    28      19
-    29      21
-    30      23
-    51      28
-    52      30
-    53      32
-    54      34
-    55      36
-    56      1
-    57      3
-    58      5
-    59      7
-    60      9
-
-    === Hash Function Observation (C++ Version) ===
-
-    === Table Size m = 10 ===
-    Key     Index
-    -----------------
-    21      1
-    22      2
-    23      3
-    24      4
-    25      5
-    26      6
-    27      7
-    28      8
-    29      9
-    30      0
-    51      1
-    52      2
-    53      3
-    54      4
-    55      5
-    56      6
-    57      7
-    58      8
-    59      9
-    60      0
-
-    === Table Size m = 11 ===
-    Key     Index
-    -----------------
-    21      1
-    22      0
-    23      10
-    24      9
-    25      8
-    26      7
-    27      6
-    28      5
-    29      4
-    30      3
-    51      4
-    52      3
-    53      2
-    54      1
-    55      0
-    56      10
-    57      9
-    58      8
-    59      7
-    60      6
-
-    === Table Size m = 37 ===
-    Key     Index
-    -----------------
-    21      5
-    22      7
-    23      9
-    24      11
-    25      13
-    26      15
-    27      17
-    28      19
-    29      21
-    30      23
-    51      28
-    52      30
-    53      32
-    54      34
-    55      36
-    56      1
-    57      3
-    58      5
-    59      7
-    60      9
-
-    ```
+  <img width="676" height="1282" alt="Image" src="https://github.com/user-attachments/assets/8c654b1c-2d85-48bd-add4-c31d8a81e15c" />
 
 - Example output for strings:
   ```
