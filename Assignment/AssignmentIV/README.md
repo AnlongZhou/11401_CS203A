@@ -18,7 +18,7 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 
     return (int)(hash % m);
     ```
-- Rationale: Implementing *Knuth’s multiplicative hashing* . It use a constant derived from the Golden Ratio (ϕ). Because ϕ is the *most irrational number* , this constant creates a hash distribution that is most resistant to clustering, ensuring data is spread evenly across the table.
+- Rationale: Implementing **Knuth’s multiplicative hashing** . It use a constant derived from the Golden Ratio (ϕ). Because ϕ is the **most irrational number** , this constant creates a hash distribution that is most resistant to clustering, ensuring data is spread evenly across the table.
 
 ### Non-integer Keys
 - Formula / pseudocode:
@@ -31,7 +31,7 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 
     return (int)(hash % m);
   ```
-- Rationale: Implementing *DJB2* (created by Daniel Julius Bernstein). It uses the prime number 5381, which has a *noisy* binary pattern, to initialize hash. By multiplying by 33 (implemented efficiently as(hash << 5) + hash), it spread the influence of every character to the final hash value.
+- Rationale: Implementing **DJB2** (created by Daniel Julius Bernstein). It uses the prime number 5381, which has a **noisy** binary pattern, to initialize hash. By multiplying by 33 (implemented efficiently as(hash << 5) + hash), it spread the influence of every character to the final hash value.
 
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
@@ -334,7 +334,7 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
   Hash table (m=37): [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, ...]
   ```
 
-- Observations: When `m = 10`, the indices form a sequential result of keys, causing *Primary Clustering*. But for the prime table sizes `m = 11` and `m = 37`, keys result in more random numbers.
+- Observations: When `m = 10`, the indices form a sequential result of keys, causing **Primary Clustering**. But for the prime table sizes `m = 11` and `m = 37`, keys result in more random numbers.
 
 - Example output for strings:
   ```
@@ -346,10 +346,10 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 
 ## Analysis
 - Mathematical Resonance: The catastrophic failure at `m = 11` proved that if the table size divides the hash multiplier `33`, the modular arithmetic cancels out string history, resulting in collisions based solely on the last character.
-- Structural Distribution: The comparison between `m = 10` and `m = 37` demonstrated that prime table sizes are essential to introduce *stride* (gaps) between sequential inputs, effectively breaking the linear clustering chains caused by composite numbers.
-- Input Sensitivity: The unexpected collisions with short strings (e.g., at `m = 37`) revealed that the DJB2 algorithm requires a minimum input length to generate a sufficient *avalanche effect*, otherwise the output remains too correlated to the raw ASCII values.
+- Structural Distribution: The comparison between `m = 10` and `m = 37` demonstrated that prime table sizes are essential to introduce **stride** (gaps) between sequential inputs, effectively breaking the linear clustering chains caused by composite numbers.
+- Input Sensitivity: The unexpected collisions with short strings (e.g., at `m = 37`) revealed that the DJB2 algorithm requires a minimum input length to generate a sufficient **avalanche effect**, otherwise the output remains too correlated to the raw ASCII values.
 
 ## Reflection
 1. The experiment demonstrated that lightweight algorithms like DJB2 trade some collision resistance for speed, requiring the engineer to manually ensure that the constants do not resonate with the table dimensions.
-2. The hash multiplier and table size must be *coprime* to ensure that the modular arithmetic preserves the history of the input string.
+2. The hash multiplier and table size must be **coprime** to ensure that the modular arithmetic preserves the history of the input string.
 3. Comparing the linear clustering at m=10 versus the gaps at m=37 highlighted that prime table sizes are mechanically necessary to introduce non-sequential strides that break up collision chains.
