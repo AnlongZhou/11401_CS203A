@@ -42,11 +42,11 @@ Email: [s1133518@mail.yzu.edu.tw](mailto:s1133518@mail.yzu.edu.tw)
 - Standard: C23 and C++23
 
 ## Results
-| Table Size (m) | Index Sequence         | Observation              |
-|----------------|------------------------|--------------------------|
-| 10             | 1, 2, 3, 4, ...        | Pattern repeats every 10 |
-| 11             | 10, 0, 1, 2, ...       | More uniform             |
-| 37             | 20, 21, 22, 23, ...    | Near-uniform             |
+| Table Size (m) | Index Sequence         | Step size | Observation         |
+|----------------|------------------------|-----------|---------------------|
+| 10             | 1, 2, 3, 4, ...        |    +1     | In sequence         |
+| 11             | 1, 0, 10, 9, ...       |    -1     | More scattered      |
+| 37             | 5, 9, 11, 13, ...      |    +2     | More scattered      |
 
 ## Compilation, Build, Execution, and Output
 
