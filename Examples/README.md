@@ -1,4 +1,4 @@
-# Data Structures Reference Guide
+# Data Structures Examples
 
 ## 1. Linked List
 **Definition:** A linear data structure where elements (nodes) are distinct objects stored in non-contiguous memory. Each node contains data and a reference (pointer) to the next node.
