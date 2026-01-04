@@ -20,7 +20,6 @@ evaluate their efficiency, and understand their applications in computer science
     return (int)(hash % m);
     ```
 - Rationale: Implementing **Knuth’s multiplicative hashing** . It use a constant derived from the Golden Ratio (ϕ). Because ϕ is the **most irrational number** , this constant creates a hash distribution that is most resistant to clustering, ensuring data is spread evenly across the table.
-- Reference: [Knuth's multiplicative hash](https://lowrey.me/exploring-knuths-multiplicative-hash-2/)
 
 ### Non-integer Keys
 - Formula / pseudocode:
@@ -34,7 +33,6 @@ evaluate their efficiency, and understand their applications in computer science
     return (int)(hash % m);
   ```
 - Rationale: Implementing **DJB2** (created by Daniel Julius Bernstein). It uses the prime number 5381, which has a **noisy** binary pattern, to initialize hash. By multiplying by 33 (implemented efficiently as(hash << 5) + hash), it spread the influence of every character to the final hash value.
-- Reference: [DJB2 hash](https://hackmd.io/@sIQnCbQ0T56A3KLAiNrlhQ/r1GtXjBVP)
 
 ## Experimental Setup
 - Table sizes tested (m): 10, 11, 37
