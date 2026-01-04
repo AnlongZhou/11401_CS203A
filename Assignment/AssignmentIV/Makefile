@@ -1,5 +1,5 @@
 all:
-	gcc -std=c23 -o hash_function.o C/main.c
+	gcc -std=c2x -o hash_function.o C/main.c
 	g++ -std=c++23 -o hash_function_cpp.o CXX/main.cpp
 clean:
 	rm -f hash_function.o hash_function_cpp.o
