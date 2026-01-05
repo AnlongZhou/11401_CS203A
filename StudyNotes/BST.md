@@ -7,7 +7,7 @@ A **Binary Search Tree** is a hierarchical structure where every node has at mos
 
 
 
-<img width="1200" height="1000" alt="Image" src="https://github.com/user-attachments/assets/e6022956-81c4-4a78-8c8f-0cb48e798e2c" />
+<img width="300" height="250" alt="Image" src="https://github.com/user-attachments/assets/e6022956-81c4-4a78-8c8f-0cb48e798e2c" />
 
 
 ## 2. Abstract Data Type (ADT) Operations
